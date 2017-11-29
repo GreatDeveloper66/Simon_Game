@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Simon Game</title>
+  <meta name="description" content="Portfolio Home Page" />
+  <meta name="keywords" content="Web Project, Portfolio,Web Developer, Web Development" />
+  <meta name="device" content="width=device-width,initial-scale=1.0" />
+  <meta name="author" content="Adam Shaffer" />
+
+  <!--LINKS TO EXTERNAL FILES-->
+
+  <!--EXTERNAL LINKS TO LOCAL CASCADING STYLE SHEET AND JAVASCRIPT CODE-->
+
+
+  <!--BOOTSTRAP LINKS AND CDN-->
+  <!--Links to Bootstrap-->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!--JQuery Google CDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!--Link to w3 School library-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- Links to Devicons and Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  <link rel="stylesheet" type="text/css" href="Simon_Game.css">
+  <script type="text/javascript" src="Simon_Game.js"></script>
+  <script type="text/javascript" src="/Users/Adam Shaffer/Desktop/Documents/Coding/Projects/My_Libraries/my_libraries.js"></script>
+
+</head>
+
+<body>
+
+  <!--game container houses the entire game space-->
+  <div class="game-container">
+    <!--game-controls houses the game controls and switches in the center of the board.-->
+    <div class="game-controls">
+      <!--sub division of game-controls-houses the simon logo at the top-->
+      <div class="simon-logo">
+        simon&copy;
+      </div>
+      <!--subdivsion of game controls houses all of the actual controls for the game excludes logo and counter-->
+
+      <!--subdivision of controls that houses the toggle switch for turning the game on and off-->
+      <div class="container-fluid controls">
+        <div class="row control-row">
+          <div class="col-xs-4">
+            <p>off</p>
+          </div>
+          <div class="col-xs-4">
+            <!-- Rounded switch -->
+            <label class="switch">
+            <input type="checkbox" id="onSwitch">
+            <span class="slider round"></span>
+         </label>
+          </div>
+          <div class="col-xs-4">
+            <p>on</p>
+          </div>
+        </div>
+        <div class="row control-row">
+          <div class="col-xs-4">
+            <p>pause</p>
+          </div>
+          <div class="col-xs-4">
+            <!-- Rounded switch -->
+
+            <label class="switch">
+            <input type="checkbox" id="startSwitch" disabled>
+            <span class="slider round"></span>
+         </label>
+          </div>
+          <div class="col-xs-4">
+            <p>start</p>
+          </div>
+        </div>
+        <div class="row control-row">
+          <div class="col-xs-4">
+            <p>norm</p>
+          </div>
+          <div class="col-xs-4">
+
+            <!-- Rounded switch -->
+
+            <label class="switch">
+            <input type="checkbox" id="modeSwitch">
+            <span class="slider round"></span>
+         </label>
+          </div>
+          <div class="col-xs-4">
+            <p>strict</p>
+          </div>
+        </div>
+      </div>
+
+      <!--Game counter-subdivision of game game controls division-keeps track of number of remaining moves for player-->
+      <div id="counter">
+        <p>
+          00
+        </p>
+      </div>
+    </div>
+
+    <!--second section of game container-contains all four buttons of simon game-green,red,blue and yellow-->
+    <button type="button" class="green-button" id="green-button" disabled>
+      </button>
+    <button type="button" class="red-button" id="red-button" disabled>
+    </button>
+    <button type="button" class="blue-button" id="blue-button" disabled>
+    </button>
+    <button type="button" class="yellow-button" id="yellow-button" disabled>
+    </button>
+  </div>
+
+<div class="messageBox" id="msgBox">
+  <p>Welcome to the Simon Game</p>
+</div>
+  <!--Audio for Green Button-->
+  <audio id="greenAudio">
+  <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg">
+</audio>
+
+  <!--Audio for Red Button-->
+  <audio id="redAudio">
+  <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mpeg">
+</audio>
+
+  <!--Audio for Yellow Button-->
+  <audio id="yellowAudio">
+  <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mpeg">
+</audio>
+
+  <!--Audio for Green Button-->
+  <audio id="blueAudio">
+  <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mpeg">
+</audio>
+
+
+</body>
+
+</html>

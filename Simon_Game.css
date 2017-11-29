@@ -1,0 +1,341 @@
+/*MOBILE FIRST-BEGINNING SECTION BEFORE THE MEDIA QUERIES ASSUMES SMART PHONE USER*/
+
+/*THIS SECTION STYLES THE GAME CONTAINER, BUTTONS AND THE DIV IN THE CENTER*/
+
+/*styling for game app-sets app in center of screen and defines its coordinates*/
+.game-container {
+  position: relative;
+  margin: auto;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width: 270px;
+  height: 270px;
+  background-color: grey;
+  border: 3px solid green;
+}
+
+.messageBox {
+  position: relative;
+  margin: auto;
+  width: 270px;
+  height: 25px;
+  background-color: grey;
+  border: 3px solid yellow;
+  display: block;
+}
+
+.messageBox p {
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+/*styling for the white circle in the center that contains the logo, counter and game controls*/
+.game-controls {
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+}
+
+/*styling for the green,red,yellow and blue simon buttons in the game*/
+.green-button,
+.red-button,
+.yellow-button,
+.blue-button {
+  position: absolute;
+  cursor: pointer;
+  float: left;
+  display: inline-block;
+  border: 4px solid grey;
+  width: 50%;
+  height: 50%;
+}
+
+.green-button {
+  background-color: green;
+  border-top-left-radius: 100%;
+}
+
+.red-button {
+  background-color: red;
+  border-top-right-radius: 100%;
+  left: 50%;
+}
+
+.blue-button {
+  background-color: blue;
+  border-bottom-left-radius: 100%;
+  top: 50%;
+}
+
+.yellow-button {
+  background-color: yellow;
+  border-bottom-right-radius: 100%;
+  top: 50%;
+  left: 50%;
+}
+
+/*this next section includes the divs withing the center game controls div
+/*includes simon-logo, counter and game controls*/
+/*simon logo at top of game controls*/
+.simon-logo {
+  position: relative;
+  height: 20%;
+  width: 50%;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  margin: auto;
+  top: 10%;
+  background-color: white;
+}
+
+/*styling for counter that keeps track of number of steps in game*/
+#counter {
+  position: relative;
+  height: 5%;
+  width: 20%;
+  color: black;
+  margin: auto;
+  top: 55%;
+}
+
+#counter p {
+  font-size: 20px;
+}
+/*styling for div that houses on/off slider, start game button and mode button*/
+.controls {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  padding: 2px;
+  background: yellow;
+  border: 2px solid red;
+}
+
+.control-row {
+  height: 33%;
+  width: 100%;
+  margin: auto;
+  border: 2px solid red;
+}
+
+//*styling for the div that houses the mode and start buttons-I need to change the name for this.*/
+.buttongroup {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  padding: 3px;
+  height: 50%;
+  width: 50%;
+
+  background-color: red;
+}
+
+/*extra class to style the game buttons-this may not be necessary-see if it can't be moved into .btn*/
+.gamebutton {
+  position: relative;
+  width: 45%;
+  height: 95%;
+  padding: 3px;
+}
+
+.gamebutton p {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  font-size: 7px;
+}
+
+/*this div acts as a container for the on and off toggleswitch*/
+.game-toggleswitch {
+  position: relative;
+  display: block;
+  padding-bottom: 5px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(150, 150, 150, 1);
+}
+
+.col-xs-4 p {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button input {
+  display: none;
+}
+
+/*THE STYLING IN THE NEXT SECTION MAKES THE SLIDE TOGGLE*/
+/* The switch - the box around the slider */
+.switch {
+  display: inline-block;
+  height: 80%;
+  width: 80%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.col-xs-4 {
+  height: 90%;
+  border: 2px solid blue;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 90%;
+  width: 43%;
+  left: 3%;
+  bottom: 3%;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 23px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*MEDIA QUERIES IN THIS SECTION SET UP DIFFERENT STYLING FOR TABLETS, DESKTOPS AND LARGE SCREENS*/
+/*tablet screen*/
+@media screen and (min-width: 320px) {
+  .game-container {
+    width: 300px;
+    height: 300px;
+  }
+  .messageBox {
+    width: 300px; 
+    height: 25px;
+  }
+  .messageBox p {
+    font-size: 9px;
+  }
+  p {
+    font-size: 8px;
+  }
+
+  .slider round {
+    border-radius: 34px;
+  }
+
+  .simon-logo {
+    font-size: 15px;
+  }
+  #counter p {
+    font-size: 25px;
+  }
+  .gamebutton p {
+    font-size: 6px;
+  }
+  .col-xs-4 p {
+    font-size: 5px;
+  }
+}
+
+/*desktop screens*/
+@media screen and (min-width: 768px) {
+  .game-container {
+    width: 400px;
+    height: 400px;
+  }
+  .messageBox{
+    width: 400px;
+    height: 35px;
+  }
+  .messageBox p {
+    font-size: 12px;
+  }
+  p {
+    font-size: 15px;
+  }
+
+  .simon-logo {
+    font-size: 25px;
+  }
+  #counter p {
+    font-size: 37px;
+  }
+  .gamebutton p {
+    font-size: 8px;
+  }
+  .col-xs-4 p {
+    font-size: 6px;
+  }
+}
+
+/*large screens*/
+@media screen and (min-width: 1024px) {
+  .game-container {
+    width: 500px;
+    height: 500px;
+  }
+  .messageBox {
+    width: 500px;
+    height: 50px;
+  }
+  .messageBox p {
+    font-size: 20px;
+  }
+  p {
+    font-size: 20px;
+  }
+
+  .simon-logo {
+    font-size: 30px;
+  }
+  #counter p {
+    font-size: 50px;
+  }
+  .gamebutton p {
+    font-size: 13px;
+  }
+  .col-xs-4 p {
+    font-size: 10px;
+  }
+}
