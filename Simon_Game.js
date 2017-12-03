@@ -17,7 +17,7 @@ window.onload = () => {
   const buttonTime = 1000;
   const bufferTime = 300;
   const startBuffer = 1300;
-  const highestLevel = 5;
+  const highestLevel = 20;
   //game messages
   const gameStart = "<p>welcome to the simon game</p>";
   const wrongButton = "<p>Error. Try Again.</p>";
