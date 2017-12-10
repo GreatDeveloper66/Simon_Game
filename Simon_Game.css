@@ -77,6 +77,18 @@
   left: 50%;
 }
 
+.button-size {
+  margin: auto;
+  width: 30px;
+  height: 15px;
+}
+
+.button-size p {
+  margin: auto;
+  font-family: Roboto;
+  font-size: 3px;
+}
+
 /*this next section includes the divs withing the center game controls div
 /*includes simon-logo, counter and game controls*/
 /*simon logo at top of game controls*/
@@ -272,6 +284,17 @@ input:checked + .slider:before {
   .col-xs-4 p {
     font-size: 5px;
   }
+
+  .button-size {
+  width: 40px;
+  height: 15px;
+  }
+.button-size p {
+  
+  font-family: Roboto;
+  font-size: 7px;
+  }
+}
 }
 
 /*desktop screens*/
@@ -302,6 +325,14 @@ input:checked + .slider:before {
   }
   .col-xs-4 p {
     font-size: 6px;
+  }
+  .button-size {
+  width: 50px;
+  height: 20px;
+  }
+.button-size p {
+  font-family: Roboto;
+  font-size: 9px;
   }
 }
 
@@ -334,4 +365,14 @@ input:checked + .slider:before {
   .col-xs-4 p {
     font-size: 10px;
   }
+  .button-size {
+  width: 80px;
+  height: 30px;
+  }
+
+.button-size p {
+  font-family: Roboto;
+  font-size: 14px;
+  }
+
 }

@@ -144,6 +144,8 @@ window.onload = () => {
     if (gameOn) {
       document.getElementById("counter").innerHTML = "<p>" + "00" + "</p>";
       document.getElementById("startSwitch").setAttribute("disabled", true);
+      document.getElementById("startSwitch").innerHTML = "<p>" + "START" + "</p>";
+      unPaused = false;
       //reset computer's moves and user's clicks.
       userClicks = computerMoves = [];
       currentLevel = 0;
@@ -163,11 +165,13 @@ window.onload = () => {
   //event handling fuction for pause and start switch
   document.getElementById("startSwitch").addEventListener("click", function() {
     if (unPaused) {
+      document.getElementById("startSwitch").innerHTML = "<p>" + "START" + "</p>";
       disableAll();
       document.getElementById("startSwitch").removeAttribute("disabled");
       document.getElementById("onSwitch").removeAttribute("disabled");
       document.getElementById("modeSwitch").removeAttribute("disabled");
     } else {
+      document.getElementById("startSwitch").innerHTML ="<p>" + "PAUSE" + "</p>";
       computerPlays();
     }
     unPaused = !unPaused;
