@@ -133,7 +133,7 @@ window.onload = () => {
     function wait() {
       timeoutID = setTimeout(function() {
         location.reload();
-      }, 1000);
+      }, 4000);
     }
     wait();
   }
@@ -349,6 +349,8 @@ window.onload = () => {
     playArray[3]();
   }
 
+
+  //ensures proper sequencing and timing of game
   function computerPlays() {
     //disable all buttons while computer goes through sequence
     disableAll();
